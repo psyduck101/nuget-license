@@ -96,6 +96,8 @@ namespace NugetUtility
         public int PageWidth { get; set; }
         [Option('x', "export-excel", Default = false, HelpText = "Export the file to excel")]
         public bool ExportToExcel { get; set; }
+        [Option("allow-duplicates", Default = false, HelpText = "Allow duplicate rows in the excel export")]
+        public bool AllowDuplicatesInExcel { get; set; }
 
         [Usage(ApplicationAlias = "dotnet-project-licenses")]
         public static IEnumerable<Example> Examples

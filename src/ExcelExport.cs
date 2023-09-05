@@ -19,7 +19,7 @@ namespace NugetUtility
             dataTable.Columns.Add(nameof(LibraryInfo.LicenseType), typeof(string));
             dataTable.Columns.Add(nameof(LibraryInfo.LicenseUrl), typeof(string));
 
-            var filteredList = libraries.Distinct(new LibraryInfoEqualityComparer()).ToList();
+            var filteredList = allowDuplicates ? libraries : libraries.Distinct(new LibraryInfoEqualityComparer()).ToList();
             foreach (var entity in filteredList)
             {
                 dataTable.Rows.Add(entity.PackageName, entity.PackageVersion, entity.LicenseType, entity.LicenseUrl);

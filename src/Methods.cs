@@ -1164,7 +1164,7 @@ namespace NugetUtility
         {
             if (!libraries.Any() || !_packageOptions.ExportToExcel) { return; }
 
-            ExcelExport.SaveAsExcel(libraries, GetOutputFilename("licenses.xlsx"));
+            ExcelExport.SaveAsExcel(libraries, GetOutputFilename("licenses.xlsx"), _packageOptions.AllowDuplicatesInExcel);
         }
 
         public void SaveAsTextFile(List<LibraryInfo> libraries)
