@@ -1,11 +1,11 @@
 {
   "profiles": {
     "NugetUtility": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "-i C:\\Users\\BjörnBaekelant\\source\\repos\\api-v3\\apiv3.sln -x"
     },
     "WSL": {
       "commandName": "WSL2",
-      "environmentVariables": {},
       "distributionName": ""
     }
   }

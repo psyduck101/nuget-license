@@ -88,6 +88,10 @@ namespace NugetUtility
                 {
                     methods.SaveAsMarkdown(mappedLibraryInfo);
                 }
+                else if (options.ExportToExcel)
+                {
+                    methods.SaveAsExcel(mappedLibraryInfo);
+                }
                 else
                 {
                     methods.SaveAsTextFile(mappedLibraryInfo);

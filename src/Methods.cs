@@ -1160,6 +1160,13 @@ namespace NugetUtility
             streamWriter.Flush();
         }
 
+        public void SaveAsExcel(List<LibraryInfo> libraries)
+        {
+            if (!libraries.Any() || !_packageOptions.ExportToExcel) { return; }
+
+            ExcelExport.SaveAsExcel(libraries, GetOutputFilename("licenses.xlsx"));
+        }
+
         public void SaveAsTextFile(List<LibraryInfo> libraries)
         {
             if (!libraries.Any() || !_packageOptions.TextOutput) { return; }

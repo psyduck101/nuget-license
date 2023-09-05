@@ -94,6 +94,8 @@ namespace NugetUtility
 
         [Option('w', "page-width", Default = 80, HelpText = "The page width, in characters, to use for HTML to text conversion.")]
         public int PageWidth { get; set; }
+        [Option('x', "export-excel", Default = false, HelpText = "Export the file to excel")]
+        public bool ExportToExcel { get; set; }
 
         [Usage(ApplicationAlias = "dotnet-project-licenses")]
         public static IEnumerable<Example> Examples

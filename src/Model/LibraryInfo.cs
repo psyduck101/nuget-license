@@ -1,6 +1,8 @@
+using System.Collections.Generic;
+
 namespace NugetUtility
 {
-    public class LibraryInfo
+    public class LibraryInfo 
     {
         public string PackageName { get; set; }
         public string PackageVersion { get; set; }
@@ -12,6 +14,24 @@ namespace NugetUtility
         public string LicenseType { get; set; }
         public string Projects { get; set; }
         public LibraryRepositoryInfo Repository { get; set; }
+
+    }
+
+    public class LibraryInfoEqualityComparer: IEqualityComparer<LibraryInfo>
+    {
+        public bool Equals(LibraryInfo x, LibraryInfo y)
+        {
+            return x.PackageName == y.PackageName && x.PackageVersion == y.PackageVersion && x.LicenseType == y.LicenseType;
+        }
+
+        public int GetHashCode(LibraryInfo obj)
+        {
+            int hash = 17;
+            hash = hash * 23 + obj.PackageName.GetHashCode();
+            hash = hash * 23 + obj.PackageVersion.GetHashCode();
+            hash = hash * 23 + obj.LicenseType.GetHashCode();
+            return hash;
+        }
     }
 
     public class LibraryRepositoryInfo
